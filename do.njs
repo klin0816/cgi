@@ -1,8 +1,11 @@
 #!/usr/local/bin/node
 var json = require('jsonfile');
+
 var querystring = require("querystring");
 var param = querystring.parse(process.env.QUERY_STRING);
+
 console.log("Content-type: text/html; charset='utf-8'\n")
+
 json.readFile('name.json', function(err, results){
   for(i = 0; i < 5; i++){
     if(param.id == results.ID[i]){
